@@ -1,0 +1,58 @@
+---
+layout: page
+title: Tunes
+permalink: /tunes/
+---
+
+<link href="/assets/css/abcjs-audio.css" media="all" rel="stylesheet" type="text/css" />
+<script src="/assets/js/abcjs_midi_5.10.3-min.js"></script>
+
+<div id="paper"></div>
+<div id="audio"></div>
+
+<pre id="abc-notes" class="d-none">
+X: 1
+T: Nigun Atik
+C:Trad.
+O: Israel
+M: 4/4
+L: 1/8
+Q: "moderato"
+K: Dm
+[| "A"^cdBc decd | e8 | "Gm"efga gfed | "A"e8 \
+| "A"eaag gffe | "Dm"d2e2 "A"^c4 | "Gm"^cdBc decB | "A"A8
+| "F"a4 a4 | "C"gagf "A"g2e2  | "Dm"f6 ed | "A"e2a2 e2A2 \
+| "F"a4 a4 | "C"gagf "A"g2e2  | "Dm"defd "A"efe^c | "Dm"d8 |]
+</pre>
+
+<script>
+  function colorRange(range, color) {
+    if (range && range.elements) {
+      range.elements.forEach(function (set) {
+        set.forEach(function (item) {
+          item.setAttribute("fill", color);
+        });
+      });
+    }
+  }
+
+  const abcString = document.querySelector("#abc-notes").innerText;
+  const tunes = ABCJS.renderAbc(
+    "paper",
+    abcString,
+    {}
+  );
+  ABCJS.renderMidi(
+    "audio",
+    abcString,
+    {
+      animate: {
+        listener: function (lastRange, currentRange) {
+          colorRange(lastRange, "#000000");
+          colorRange(currentRange, "#3D9AFC");
+        },
+        target: tunes[0]
+      },
+    }
+  );
+</script>

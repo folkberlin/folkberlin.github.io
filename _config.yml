@@ -1,0 +1,27 @@
+title: FolkBerlin
+email: folkberlin@gmail.com
+lang: en-US
+timezone: Europe/Berlin
+
+description: >-
+  A nonprofit folk music community for cultural exchange
+  and connection through music.
+baseurl: ""
+url: https://folkberlin.github.io
+encoding: UTF-8
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .gitignore
+  - README.md
