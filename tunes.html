@@ -4,8 +4,11 @@ title: Tunes
 permalink: /tunes/
 ---
 
-<div id="paper"></div>
-<div id="audio"></div>
+<div>
+  <div id="paper"></div>
+  <div id="audio"></div>
+</div>
+
 <pre id="abc-notes" class="d-none">
 X: 1
 T: Nigun Atik
@@ -16,13 +19,13 @@ L: 1/8
 Q: "moderato"
 K: Dm
 [| "A"^cdBc decd | e8 | efga gfed | e8
-w: Od na shu va el ni gun a tik Ve 'haz e mer yif ve 'ye 'er av
+w: Od na-shu-va el ni-gun a-tik v'-ha-ze-mer yif v'-ye-e-rav
 | eaag gffe | "Bb7"d2e2 "A"^c4 | "Bb7"^cdBc decB | "A"A8
-w: Od ga vi a me shu mar na shik, na shik, A li zei ei ya nim ve 'le vav.
+w: Od ga-vi-a m'-shu-mar na-shik na-shik a-li-ze e-na-yim v'-le-vav
 | "F"a4 a4 | "C"gagf "A"g2e2  | "Dm"f6 ed | "A"e2a2 e2A2
-w: To vu, to vu o ha le inu ki, ki ha machol hif' ts ia
+w: to-vu to-vu o-ha-le-nu ki ha-ma-chol hif-tsi-a
 | "F"a4 a4 | "C"gagf "A"g2e2  | "Dm"defd "A"efe^c | "Dm"d8 |]
-w: To vu, to vu o ha le inu Od na shu va el ni gun a tik.
+w: to-vu to-vu o-ha-le-nu od na-shu-va el ni-gun a-tik
 </pre>
 
 <div class="alert alert-info mt-5">
@@ -45,7 +48,9 @@ w: To vu, to vu o ha le inu Od na shu va el ni gun a tik.
   const tunes = ABCJS.renderAbc(
     "paper",
     abcString,
-    {}
+    {
+      responsive: "resize",
+    }
   );
   ABCJS.renderMidi(
     "audio",
@@ -58,6 +63,7 @@ w: To vu, to vu o ha le inu Od na shu va el ni gun a tik.
         },
         target: tunes[0]
       },
+      generateDownload: true
     }
   );
 </script>
