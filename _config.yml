@@ -25,3 +25,7 @@ exclude:
   - Gemfile.lock
   - .gitignore
   - README.md
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

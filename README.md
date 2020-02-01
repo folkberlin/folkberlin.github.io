@@ -7,8 +7,11 @@ source for: [FolkBerlin.github.io](http://folkberlin.github.io/)
 You need Ruby and gem before starting, then:
 
 ```bash
-# install jekyll and bundler
+# install bundler if haven't already
 gem install jekyll bundler
+
+# (optional) configure bundler to use the project folder
+bundle config set path 'vendor/bundle'
 
 # install dependencies
 bundle install
